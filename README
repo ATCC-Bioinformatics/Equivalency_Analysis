@@ -1,6 +1,0 @@
-Collection of scripts used in the equivalency analysis effort
-
-quality_puller.py takes a list of genbank accessions and downloads assembly statistics to a shared table.
-The equivalent data for ATCC assemblies can be captured from the SBC Dashboard under the assemblies table.
-
-The Busco folder contains a few commands related to the installation and use of Busco to generate completion metrics for each genbank sequence (already exists for atcc sequences)
