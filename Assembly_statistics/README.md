@@ -1,15 +1,15 @@
-#Assembly statistic compilation scripts as of July 22nd 2021
+# Assembly statistic compilation scripts as of July 22nd 2021
 
 GNU parallel is often employed - we used GNU parallel 20161222
 
-#atcc_in_refseq_downloader_and_GC.sh requires:#
+# atcc_in_refseq_downloader_and_GC.sh requires:#
 bbmap, specifically stats.sh - we used the conda installation of BBMap version 38.18
 
-#quality_puller.py downloads several assembly statistics for RefSeq assemblies of ATCC strains. It requires:
+# quality_puller.py downloads several assembly statistics for RefSeq assemblies of ATCC strains. It requires:
 ATCC-filtered assembly_summary_refseq.tsv
 python >=3.5 with packages Bio, xmltodict, pandas, argparse
 
-#SVs_and_ANI.sh requires:#
+# SVs_and_ANI.sh requires:#
 
 dnadiff installed - we used version 1.3
 
