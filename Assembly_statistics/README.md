@@ -31,4 +31,4 @@ It requres:
 
 python >=3.5 and pandas
 
-tableS4.atcc.assembly.summary.tsv and tableS4.Refseq.assembly.summary.tsv are too large to be made available in this repo and were made from internal product tracking or information from Refseq (with GC content added from bbmap)
+tableS4.atcc.assembly.summary.tsv and tableS4.Refseq.assembly.summary.tsv are available in this repo and were made from internal product tracking or information from Refseq (with GC content added from bbmap)
