@@ -1,5 +1,3 @@
-# ASM Resource-Announcement
-This document provides additional documentation and supplemental data supporting the **ATCC Genome Portal** (AGP, https://genomes.atcc.org) manuscript currently under development. 
 ## Data Usage Agreement
 All whole genome assemblies from the ATCC Genome Portal are avialable for Research use Only. Researchers who are interested in downloading individual genomes must 1/ create an account on ATCC's main website (https://www.atcc.org), and 2/ agree to ATCC's Data Use Agreement when downloading data from the AGP. A copy of the Data Use Agreement can be found here: https://www.atcc.org/policies/product-use-policies/data-use-agreement.
 
