@@ -1,20 +1,26 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Place to organize a future github for equivalency analysis scripts
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+######### SNPs + Indels: Variant Calling and Annotations with ReferenceAssembly.py
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+File paths:
+    - Input files:
+        /home/adams/ADAMS/Applicate-Note/equiv_analysis_refAssembly/atcc_product_in_RefSeq.csv
+        /home/adams/ADAMS/Applicate-Note/equiv_analysis_refAssembly/June2021/june2021_gcf_list.csv
+        Raw reads:
+            /home/shared/sequencing-data
+        ReferenceAssembly path:
+            /mnt/sd1/pipeline/AMGP-reference-based-assembly/ReferenceAssembly.py
+    - Output files:
+        All GCFs were saved to: /home/adams/ADAMS/Application-Note/equiv_analysis_refAssembly/public_assemblies
+        All GBKS were saved to: /home/adams/ADAMS/Application-Note/equiv_analysis_refAssembly/gbk
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Tools:
+    - Python 3.6.8
+    - Qualimap v.2.2.1
+    - BWA 0.7.17
+    - samtools 1.9
+    - GATK 4.0.8.1
+        - Requires Java
+    - VEP 95.1
+    - tabix 1.10.2
+    - bcftools 1.9
