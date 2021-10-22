@@ -1,19 +1,12 @@
 #! /usr/bin/python
 import re
 import string
-# NCTC 2 ATCC
-nctc2atcc={}
-for line in open('atcc2nctc.csv','r'):
-    line = line.replace('\n','').split(',')
-    nctc = line[0].replace('NCTC ','')
-    atcc = line[-1].replace('ATCC ','')
-    nctc2atcc[nctc]= atcc
-
-##### find nctc id #######
-def find_nctc(line):
+# function to extract atcc or nctc id from refseq record
+# regular expressions and ad hoc code were used to capture all the IDs 
+def find_id(line):
     line = line.replace('\n','').lower().replace('atcc(b)','atcc ')
     if "atcc sd5219" in line:
-        return ''
+        return 'atcc sd5219'
     else:
         id = re.findall(r'atcc\s*\d+|atcc\s*[=:_-]\s*\d+|atcc\s*[=:_-]*\s*baa\s*[=:_-]*\s*\d+|atcc\s*[=:_-]*\s*pta\s*[=:_-]*\s*\d+|atcc\s*[=:_-]*\s*vr\s*[=:_-]*\s*\d+',line)
         if len(id) > 0:
@@ -25,54 +18,47 @@ def find_nctc(line):
             else:
                 if re.search('strain=phila',''.join(line)) or re.search('philadelphia_1_atcc',''.join(line)):
                     return '33152'
+                # if neither atcc or nctc id could be extracted at this point, the following block
+                # prints out information that could be used to update this function in order
+                # to catch all examples
                 else:
                     print('Not found')
                     print(id)
                     print(line)
                     return 'error'
 
-#############################      NCBI Data       #############################
+# Go through NCBI RefSeq Bacteria assembly summary file and find all assemblies of ATCC products
 def search_ncbi_refseq():
-    found_count = 0
     out_lines = []
+    # iterate through each line
     with open('assembly_summary_refseq.txt','r',encoding='utf-8') as f:
         c = 0
+        # skip header lines
         for line in f:
             if line[0] == '#':
                 pass
             else:
-                line_original = line.split('\t')
+                # convert to lowercase and split on tab
                 line = line.lower()
                 line_arr = line.split('\t')
+                # pull out GCF, GCA, assembly level, and url
                 gcf = line_arr[0]
                 gca = line_arr[17]
                 level = line_arr[11]
                 url =line_original[-4]
-                # If the accession number is one included in the Prokaryotic RefSeq
+                # initialize product id (will become atcc or nctc id)
                 product_id = ''
-                # nctc_id = find_nctc([line,prokaryotes_line])
-                if level == "complete genome":
-                    if "atcc" in line or "nctc" in line:
-                        # Increment assembly-type count
-                        product_id = find_nctc(line)
-                        found_count+=1
-                elif level == "chromosome":
-                    if "atcc" in line or "nctc" in line:
-                        # Increment assembly-type count
-                        product_id = find_nctc(line)
-                        found_count+=1
-                elif level == "contig" or level == "scaffold":
-                    if "atcc" in line or "nctc" in line:
-                        # Increment assembly-type count
-                        product_id = find_nctc(line)
-                        found_count+=1
+                if "atcc" in line or "nctc" in line:
+                    product_id = find_id(line)
+                # if a product id is found, append the data to the output lines
                 if product_id == 'error':
                     pass
-                elif product_id != '' :#and 'vr' not in nctc_id:
+                elif product_id != '' :
                     out_lines.append([product_id,gcf,level,url])
-    return out_lines,found_count
+    return out_lines
+out_lines = search_ncbi_refseq()
 
-out_lines,found_count = search_ncbi_refseq()
+# print the resulting lines to file
 
 # with open('atcc_nctc_in_refseq_id-gcf-level-url.txt','w') as f:
 #     for line in out_lines:
