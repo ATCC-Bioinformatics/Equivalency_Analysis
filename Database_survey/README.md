@@ -1,12 +1,12 @@
-Information about the files
-
-Files downloaded on 06 June 2021
+### Information about source files downloaded on 06 June 2021
 File | Source 
 :----- | :----: 
-assembly_summary_genbank | https://ftp.ncbi.nlm.nih.gov/genomes/genbank/assembly_summary_genbank.txt
-assembly_summary_refseq | https://ftp.ncbi.nlm.nih.gov/genomes/refseq/assembly_summary_refseq.txt
-prokaryotes.csv | https://www.ncbi.nlm.nih.gov/genome/browse#!/prokaryotes/
-species_EnsemblBacteria  | http://ftp.ensemblgenomes.org/vol1/pub/bacteria/current/species_EnsemblBacteria.txt
-jgi_download_16jun2021_simplified.txt | https://gold.jgi.doe.gov/projects with Domain=BACTERIAL, Sequencing Strategy=Whole Genome Sequencing, and Project Status=Complete
-genome_status.csv | https://app.onecodex.com/genome_status?fetch_all=true
-sbc_dashboard_assemblies |  http://n3.nekocloud.com:3838/sbc/sequencing_dashboard/
+assembly_summary_refseq.txt | https://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
+atcc2nctc.csv | adapted from https://www.phe-culturecollections.org.uk/products/bacteria/atcc-equivalents.aspx
+### Scripts
+#### gather_atcc_nctc_assemblies.py
+This script processes the Bacterial RefSeq assembly summary file and keeps all records that contained the keyword atcc or nctc. 
+#### gather_metadata.py 
+This script processes the output from the above script, downloads each assembly's assembly_summary.txt report, and pulls out the metadata from that report. 
+#### parse_metadata.py 
+This script parses the pickled metadata object created in the above script and creates a tab-delimited file with one line for each assembly containing all available metadata.
