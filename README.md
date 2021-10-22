@@ -4,6 +4,8 @@ All whole genome assemblies from the ATCC Genome Portal are avialable for Resear
 ## Raw FASTQ Data
 Raw data for all ATCC Genome Portal assemblies is subject to the same Data Use Agreement described above. Bulk download of Illumina and Nanopore data is available from our MS Azure Blog storage space. The base URL is https://atccbioinformatics.blob.core.windows.net/publicdata, to which you would add a specific suffix for a compressed tarball for both the ONT and Illumina from each assembly. The specific suffix list for all assemblies is maintained in a separate GitHub repo ([AGP-Raw-Data](https://github.com/ATCC-Bioinformatics/AGP-Raw-Data)) to be shared upon request.
 
+
+## Code
 This repository contains the various scripts and input files used in ATCC's Equivalency Analysis (name to be updated with final publicaiton name).
 
 There are three folders containing scripts related to the compilation and generation of various data.
