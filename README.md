@@ -6,7 +6,6 @@ Raw data for all ATCC Genome Portal assemblies is subject to the same Data Use A
 
 
 ## Code
-This repository contains the various scripts and input files used in ATCC's Equivalency Analysis (name to be updated with final publicaiton name).
 
 *Please see individual Readme files within each folder for more details.*
 
