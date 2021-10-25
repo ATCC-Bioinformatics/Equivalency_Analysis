@@ -1,13 +1,7 @@
-#Collection of scripts involved in the assessment of small variants (SNPs/Indels) between refseq references of ATCC strains relative to the ATCC genome portal strain fastq files.
+## Assessment of small variants (SNPs/Indels) between RefSeq sequences labeled as ATCC strains (reference) relative to the ATCC genome portal strain fastq files (query). 
 
-run_referenceAssembly_compile_data.py will run ReferenceAssembly.py in order to generate small variants between ACC read data and related RefSeq reference data and provide annotations such as synonymous/nonsynonymous mutation.
+Scripts | Description | Software Dependencies | Additional Files | Notes
+--------|-------------|-----------------------|------------------|------
+run_referenceAssembly_compile_data.py | will run ReferenceAssembly.py in order to generate small variants between ATCC read data and related RefSeq reference data and provide annotations such as synonymous/nonsynonymous mutation | `python version 3.6.8`, `Qualimap v.2.2.1`, `BWA version 0.7.17`, `samtools version 1.9`, `GATK version 4.0.8.1`, `Java`, `VEP version 95.1`, `tabix version 1.10.2`, `bcftools version 1.9` | ReferenceAssembly.py, atcc_product_in_RefSeq.csv | atcc_product_in_RefSeq.csv contains columns: 1. Item Name: the ATCC Product Catalog Number, 2. GCF: the RefSeq accession number, 3. Illumina Filename: the basename for both R1/R2 fastq files, 4. and ONT Filename: the OxfordNanopore filename.
 
-#File paths:#
 
-Input file:
-
-atcc_product_in_RefSeq.csv contains columns Item Name - the ATCC Product Catalog Number, GCF - the RefSeq accession number, Illumina Filename - the basename for both R1/R2 fastq files, and ONT Filename - the OxfordNanopore filename.
-
-Raw reads: Available from Azure Blob
-
-#Tools:# - Python 3.6.8 - Qualimap v.2.2.1 - BWA 0.7.17 - samtools 1.9 - GATK 4.0.8.1 - Requires Java - VEP 95.1 - tabix 1.10.2 - bcftools 1.9
