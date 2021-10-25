@@ -1,8 +1,8 @@
 ## Data Usage Agreement
 All whole genome assemblies from the ATCC Genome Portal are avialable for Research use Only. Researchers who are interested in downloading individual genomes must 1/ create an account on ATCC's main website (https://www.atcc.org), and 2/ agree to ATCC's Data Use Agreement when downloading data from the AGP. A copy of the Data Use Agreement can be found here: https://www.atcc.org/policies/product-use-policies/data-use-agreement.
 
-## Raw FASTQ Data
-Raw data for all ATCC Genome Portal assemblies is subject to the same Data Use Agreement described above. Bulk download of Illumina and Nanopore data is available from our MS Azure Blog storage space. The base URL is https://atccbioinformatics.blob.core.windows.net/publicdata, to which you would add a specific (case-sensitive) suffix for a compressed tarball for both the ONT and Illumina from each assembly. The specific suffix list for all assemblies is maintained in a separate GitHub repo ([AGP-Raw-Data](https://github.com/ATCC-Bioinformatics/AGP-Raw-Data)) to be shared upon request.
+## Raw FASTA/Q Data
+Raw data for all ATCC Genome Portal assemblies is subject to the same Data Use Agreement described above. Bulk download of Illumina and Nanopore data is available from our MS Azure Blog storage space. The base URL is https://atccbioinformatics.blob.core.windows.net/publicdata, to which you would add a specific (case-sensitive) suffix for fastqs for both the ONT and Illumina from each assembly or the assembly suffix for a compressed fasta. The specific suffix list for all assemblies is maintained in a separate GitHub repo ([AGP-Raw-Data](https://github.com/ATCC-Bioinformatics/AGP-Raw-Data)) to be shared upon request.
 
 
 ## Code
