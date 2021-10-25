@@ -1,6 +1,6 @@
 #Given assembly_summary_refseq.txt that has been filtered for ATCC genomes:
 jobs=32 #define how many threads to use in download
-cut -f 20 ATCC_summary_refseq.tsv > atcc.summary.tmp #get ftp address field
+cut -f 4 ATCC_summary_refseq.tsv > atcc.summary.tmp #get ftp address field
 rev atcc.summary.tmp | cut -d\/ -f1 | rev > atcc.names.tmp #get filename prefix from address
 while read line; do echo "_genomic.fna.gz"; done < atcc.names.tmp > atcc.genomic.tmp #set filename suffix
 paste -d'\0' atcc.names.tmp atcc.genomic.tmp > atcc.addr.tmp #combine filename prefix and suffix with no delimiter
