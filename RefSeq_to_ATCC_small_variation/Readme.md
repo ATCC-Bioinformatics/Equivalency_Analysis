@@ -1,4 +1,4 @@
-## Assessment of small variants (SNPs/Indels) between RefSeq sequences labeled as ATCC strains relative to the ATCC genome portal strain fastq files. 
+## Assessment of small variants (SNPs/Indels) between refseq sequences labeled as ATCC and their corresponding ATCC Reference Genome raw Fastq files.
 
 Scripts | Description | Software Dependencies
 --------|-------------|----------------------
