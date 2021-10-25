@@ -4,7 +4,7 @@
 
 Scripts | Description | Software Dependencies | Additional Files | Notes
 --------|-------------|-----------------------|------------------|------
-SVs_and_ANI.sh | NA | `dnadiff version 1.3`, `fastANI version 1.33`, `seqtk version 1.3-r106` | run.list | pathways to files are hardcoded in script. See below for details.*
+SVs_and_ANI.sh | Uses dnadiff from mummer to calculate structural variants and fastANI to calculate average nucleotide identity for all RefSeq assemblies (query) relative to their corresponding ATCC assembly (Reference) | `dnadiff version 1.3`, `fastANI version 1.33`, `seqtk version 1.3-r106` | run.list | pathways to files are hardcoded in script. See below for details.*
 atcc_in_refseq_downloader_and_GC.sh | pulls data directly from RefSeq  | `BBMap version 38.18` | ATCC_summary_refseq.tsv.txt | 
 compare.all.levels.py | compares assembly statistics (Length, N50, GC Content, Contig Count) between ATCC assemblies and RefSeq assemblies | `python >=3.5` and `pandas` | tableS4.Refseq.assembly.summary.tsv and tableS4.atcc.assembly.summary.tsv | tableS4\* were made from internal product tracking or information from Refseq (with GC content added from bbmap)
 quality_puller.py | downloads several assembly statistics for RefSeq assemblies of ATCC strains | `python >=3.5` with packages `Bio, xmltodict, pandas, argparse` | tableS4.Refseq.assembly.summary.tsv |
