@@ -10,7 +10,7 @@ parser.add_argument('-a',required=False,help='NCBI API Key - speeds up downloads
 myargs=parser.parse_args()
 
 api_key = myargs.a
-acc_list = list(pd.read_csv(myargs.l,header=None)[0])
+acc_list = list(pd.read_csv(myargs.l,header=Noneskiprows=1)[0])
 prefix = myargs.p
 
 Entrez.email=myargs.e
